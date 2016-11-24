@@ -2,24 +2,27 @@
 
 ## Index
 
-* [The-hypothesis](#The-hypothesis)
-* [Hypothesis-testing-plan](#Hypothesis-testing-plan)
-* [Data-acquisition-and-preparation](#Data-acquisition-and-preparation)
-* [Face-recognition-model](#Face-recognition-model)
-* [Building-pipeline](#Building-pipeline)
-* [Test](#Tests)
-* [Results-analysis](#Results-analysis)
+* [hypothesis](#hypothesis)
+* [hypothesis-testing-plan](#hypothesis-testing-plan)
+* [data-acquisition-and-preparation](#data-acquisition-and-preparation)
+* [face-recognition-model](#face-recognition-model)
+* [building-pipeline](#building-pipeline)
+* [test](#tests)
+* [results-analysis](#results-analysis)
 
-## The-hypothesis
+## the-hypothesis
+Usage of face recognition systems imposes various constraints on an input data. One of them - the spatial size of the input image, as a rule, the height, and width of the input image has to be equal to the input of the used model (network based). 
 
-## Hypothesis-testing-plan
+However, in practice, there are often cases when the target object in a frame has a smaller size than the size of the entrance window of the network, which may a negatively affects to the quality of facial recognition. 
 
-## Data-acquisition-and-preparation
+## hypothesis-testing-plan
 
-## Face-recognition-model
+## data-acquisition-and-preparation
 
-## Building-pipeline
+## face-recognition-model
 
-## Tests
+## building-pipeline
 
-## Results-analysis
+## tests
+
+## results-analysis

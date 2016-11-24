@@ -6,7 +6,6 @@
 * [hypothesis-testing-plan](#hypothesis-testing-plan)
 * [data-acquisition-and-preparation](#data-acquisition-and-preparation)
 * [face-recognition-model](#face-recognition-model)
-* [building-pipeline](#building-pipeline)
 * [test](#tests)
 * [results-analysis](#results-analysis)
 
@@ -21,15 +20,16 @@ how the enhancement of image resolution and different types of enhancement affec
 <br/>
 <p align="center">
   <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/hypothesis.png">
+  <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/face_3.png">
 </p>
 
+
 ## hypothesis-testing-plan
+
 
 ## data-acquisition-and-preparation
 
 ## face-recognition-model
-
-## building-pipeline
 
 ## tests
 

@@ -18,6 +18,11 @@ However, in practice, there are often cases when the target object in a frame ha
 One of the possible solutions to this problem may consist of the following - artificially increase the resolution of the target image up to the size of the input and find out
 how the enhancement of image resolution and different types of enhancement affect the final accuracy.  
 
+<br/>
+<p align="center">
+  <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/hypothesis.png">
+</p>
+
 ## hypothesis-testing-plan
 
 ## data-acquisition-and-preparation

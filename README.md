@@ -10,7 +10,7 @@
 * [results-analysis](#results-analysis)
 
 ## hypothesis
-Face recognition systems got widespread in problems of a processing and analysis of a video data. One of them is the problem of home security and an example of product based on a home security is "Ring.com" company.
+Face recognition systems got widespread in problems of a processing and analysis of a video data. One of them is the problem of home security and an example of product based on a home security is ["Ring.com"](https://ring.com) company.
 
 At the moment, there are many solutions of face recognition systems, that have accuracy close to 99% (according to vis-www.cs.umass.edu/lfw/results.html)
 
@@ -33,6 +33,14 @@ One way to achieve a small growth of a recognition quality under the conditions 
 
 
 ## hypothesis-testing-plan
+To test the hypothesis, I will need an in-the-wild faces data, a model for face recognition, image resolution enhancement methods, and python.
+In order to understand how different methods of image resolution enhancement affect the quality of face recognition, I will exploit the next pipeline:
+
+* Detect [faces-ROI](https://github.com/denis-r4/resolution-and-face-recognition/blob/master/notebooks/face_detector.ipynb) on real data, as well as artificially noise them, reduce the size of ROI faces, simulating different variants of object distance from the camera;
+* Compute vector representation of faces for the database and for all generated on the stage one samples using [pre-trained](http://www.robots.ox.ac.uk/~vgg/software/vgg_face) face recognition model [VGG16](https://github.com/denis-r4/resolution-and-face-recognition/blob/master/notebooks/vgg.py) using last before output FC layer of the network;
+* Compute [cosine distance](https://github.com/denis-r4/resolution-and-face-recognition/blob/master/notebooks/compute_cos_distance.ipynb) from each input sample (from the stage two)  to each hash in the face database;
+* Compute a network error for various boundary condition of faces and different methods of a resolution enhancement;
+* Analysing the recognition error from method to method.
 
 
 ## data-acquisition-and-preparation

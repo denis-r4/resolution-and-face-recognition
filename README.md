@@ -12,7 +12,7 @@
 ## hypothesis
 Face recognition systems got widespread in problems of a processing and analysis of a video data. One of them is the problem of home security and an example of product based on a home security is ["Ring.com"](https://ring.com) company.
 
-At the moment, there are many solutions of face recognition systems, that have accuracy close to 99% (according to [LFW-behcnmark](vis-www.cs.umass.edu/lfw/results.html))
+At the moment, there are many solutions of face recognition systems, that have accuracy close to 99% (according to [LFW-behcnmark](vis-www.cs.umass.edu/lfw/results.html) )
 
 However, detection systems based on a CNN imposes various restrictions on an input data. One of them - spatial resolution of an input image (as a rule, the height, and width of an image) must be equal to the size of a network input. In practice, there are often cases when the target object in a frame has a smaller size than the size of the entrance window of the network, which may a negatively affects the quality of facial recognition.
 

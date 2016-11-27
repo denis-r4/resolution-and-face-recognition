@@ -26,12 +26,10 @@ A particular solution of this problem is an artificial increasing of a resolutio
 
 One way to achieve a small growth of a recognition quality under the conditions described above is the using of "more intelligent" techniques to improve image resolution. In this research, I will test how the standard interpolation techniques (most spread), as well as algorithms of super-resolution, can be applied to the target image resolution, and affect the final quality of facial recognition.  
 
-|   Algorithm   |   Image   |
-|   -------------------   |:------:|
-|   scr   |   <p align="center"> <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/resize_examples/source_50x50.png"> </p>   |
-|   nearest   |   <p align="center"> <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/resize_examples/nearest.png"> </p>   |
-|   bilinear   |   <p align="center"> <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/resize_examples/bilinear.png"> </p>   |
-|   bicubic   |   <p align="center"> <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/resize_examples/cubic.png"> </p>   | 
+|   source (50x50)   |   nearest x4  |   bilinear x4   |   bicubic x4   |   super-resolution x4   |
+|   -------------------   |:------:|:------:|:------:|:------:|
+|   <p align="center"> <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/resize_examples/source_50x50.png"> </p>   |   <p align="center"> <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/resize_examples/nearest.png"> </p>   |   <p align="center"> <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/resize_examples/bilinear.png"> </p>   |   <p align="center"> <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/resize_examples/cubic.png"> </p>   |   <p align="center"> <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/resize_examples/super-resolution.png"> </p>   |
+
 
 
 ## hypothesis-testing-plan

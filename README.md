@@ -45,6 +45,20 @@ In order to understand how different methods of image resolution enhancement aff
 
 ## data-acquisition-and-preparation
 
+As a test case, I decided to choose the video as close to reality - taken directly from the [Ring.com device](https://ring.com/videodoorbells). After watching about [30 videos](https://www.youtube.com/channel/UCSDG3M0e2mGX9_qtHEtzj2Q/videos), I decided to choose the [one](https://www.youtube.com/watch?v=zwUeS_sXJcY) with the appearance and disappearance of several different people on the scene and long enough for generating data set. (I choose only one due low hardware resource and limited time conditions)
+
+<p align="center">
+  <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/data.png">
+</p>
+
+Next, using the OpenCV detector, I detect faces ROI on the video and removed undetected frames. 
+As a model for face recognition, I chose the one based on VGG16, which has an input frame size 224x244. Detected ROI's were less than the required input size. Also, for more variability, I generated new noisy variants from each detected ROI , where the noise means downsampling, which is equivalent to different stance and remoteness of faces from a camera. 
+, , , , , 100x100, 80x80, 50x50 , 30x30, 20x20, 15x15, 10x10, 5x5.
+|   224x224   |   200x200  |   180x180   |   150x150   |   120x120   |   100x100   |   80x80   |   50x50   |   30x30   |   20x   |   15x15   |   10x10   |   5x5   |
+|   -------------------   |:------:|:------:|:------:|:------:||:------:|:------:|:------:|:------:||:------:|:------:|:------:|:------:|
+|   <p align="center"> <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/resize_examples/224.png"> </p>   |   <p align="center"> <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/resize_examples/200.png"> </p>   |   <p align="center"> <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/resize_examples/180.png"> </p>   |   <p align="center"> <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/resize_examples/150.png"> </p>   |   <p align="center"> <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/resize_examples/120.png"> </p>   |   <p align="center"> <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/resize_examples/100.png"> </p>   |   <p align="center"> <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/resize_examples/80.png"> </p>   |   <p align="center"> <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/resize_examples/50.png"> </p>   |   <p align="center"> <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/resize_examples/30.png"> </p>   |   <p align="center"> <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/resize_examples/20.png"> </p>   |   <p align="center"> <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/resize_examples/15.png"> </p>   |   <p align="center"> <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/resize_examples/10.png"> </p>   |   <p align="center"> <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/resize_examples/5.png"> </p>   |
+
+
 ## face-recognition-model
 
 ## tests

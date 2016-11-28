@@ -69,5 +69,11 @@ Then, I used fc7 layer instead of fc8 for getting vector representation of an in
 
 
 ## tests
+### Algorithms
+For testing, I choose three most spread algorithms - [bilinear interpolation](https://en.wikipedia.org/wiki/Bilinear_interpolation), [nearest neighbor](https://en.wikipedia.org/wiki/Nearest-neighbor_interpolation), and [bicubic interpolation](https://en.wikipedia.org/wiki/Bicubic_interpolation). Also after some searching of recent implementation of super-resolution (SR) algorithms based on neural networks, I found the good one - [neural-enhance](https://github.com/alexjc/neural-enhance)  
+Also, there is a good SR benchmark that I found later - [sr-bechmark](https://github.com/huangzehao/Super-Resolution.Benckmark), but I didn't have a possibility to test more than one SR solution, so, I choose the first one.   
+
+### Tests
+
 
 ## results-analysis

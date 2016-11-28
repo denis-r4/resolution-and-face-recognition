@@ -2,14 +2,15 @@
 
 ## Index
 
-* [hypothesis](#hypothesis)
-* [hypothesis-testing-plan](#hypothesis-testing-plan)
-* [data-acquisition-and-preparation](#data-acquisition-and-preparation)
-* [face-recognition-model](#face-recognition-model)
-* [test](#tests)
-* [results-analysis](#results-analysis)
+* [Hypothesis](#Hypothesis)
+* [Hypothesis-testing-plan](#Hypothesis-testing-plan)
+* [Data-acquisition-and-preparation](#Data-acquisition-and-preparation)
+* [Face-recognition-model](#Face-recognition-model)
+* [Test](#Tests)
+* [Results-analysis](#Results-analysis)
+* [Timing](#Timing)
 
-## hypothesis
+## Hypothesis
 Face recognition systems got widespread in problems of a processing and analysis of a video data. One of them is the problem of home security and an example of product based on a home security is ["Ring.com"](https://ring.com) company.
 
 At the moment, there are many solutions of face recognition systems, that have accuracy close to 99% according to [LFW-behcnmark](http://vis-www.cs.umass.edu/lfw/results.html)
@@ -32,7 +33,7 @@ One way to achieve a small growth of a recognition quality under the conditions 
 
 
 
-## hypothesis-testing-plan
+## Hypothesis-testing-plan
 To test the hypothesis, I will need an in-the-wild faces data, a model for face recognition, image resolution enhancement methods, and python.
 In order to understand how different methods of image resolution enhancement affect the quality of face recognition, I will exploit the next pipeline:
 
@@ -43,7 +44,7 @@ In order to understand how different methods of image resolution enhancement aff
 * Analysing the recognition error from method to method.
 
 
-## data-acquisition-and-preparation
+## Data-acquisition-and-preparation
 
 As a test case, I decided to choose the video as close to reality - taken directly from the [Ring.com device](https://ring.com/videodoorbells). After watching about [30 videos](https://www.youtube.com/channel/UCSDG3M0e2mGX9_qtHEtzj2Q/videos), I decided to choose the [one](https://www.youtube.com/watch?v=zwUeS_sXJcY) with the appearance and disappearance of several different people on the scene and long enough for generating data set. (I choose only one due low hardware resource and limited time conditions)
 
@@ -63,17 +64,30 @@ As a model for face recognition, I chose the one based on VGG16, which has an in
 |   <p align="center"> <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/resize_examples/80.png"> </p>   |   <p align="center"> <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/resize_examples/50.png"> </p>   |   <p align="center"> <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/resize_examples/30.png"> </p>   |   <p align="center"> <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/resize_examples/20.png"> </p>   |   <p align="center"> <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/resize_examples/15.png"> </p>   |   <p align="center"> <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/resize_examples/10.png"> </p>   |   <p align="center"> <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/resize_examples/5.png"> </p>   |
 
 
-## face-recognition-model
+## Face-recognition-model
 For choosing face-recognition model I looked up a few free pre-trained models and stopped at the [Caffe model zoo](https://github.com/BVLC/caffe/wiki/Model-Zoo#vgg-face-cnn-descriptor) - [VGG16 for face recognition](http://www.robots.ox.ac.uk/~vgg/software/vgg_face/). I prefer Theano, so, I repacked "caffemodel" to "pickle" format.
 Then, I used fc7 layer instead of fc8 for getting vector representation of an input.
 
 
-## tests
+## Tests
 ### Algorithms
 For testing, I choose three most spread algorithms - [bilinear interpolation](https://en.wikipedia.org/wiki/Bilinear_interpolation), [nearest neighbor](https://en.wikipedia.org/wiki/Nearest-neighbor_interpolation), and [bicubic interpolation](https://en.wikipedia.org/wiki/Bicubic_interpolation). Also after some searching of recent implementation of super-resolution (SR) algorithms based on neural networks, I found the good one - [neural-enhance](https://github.com/alexjc/neural-enhance)  
 Also, there is a good SR benchmark that I found later - [sr-bechmark](https://github.com/huangzehao/Super-Resolution.Benckmark), but I didn't have a possibility to test more than one SR solution, so, I choose the first one.   
 
 ### Tests
+As soon as I got everything all necessary parts, the tests started.
+Firstly, I computed a vector representation of all generated samples in different resolution conditions.
+Secondly, all received vectors have been passed through cosine distance (to vectors of images in database). 
+Thirdly, I [got](https://github.com/denis-r4/resolution-and-face-recognition/blob/master/notebooks/accuracy.ipynb) an overall mean accuracy and a mean accuracy per each scale of source images. 
+Resulting plot looks like this: 
+<br/>
+<p align="center">
+  <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/accuracy_res.png">
+</p>
+The bottom axis represents a different scale of source images.
+The left axis represents a received accuracy of face-recognition for particular scale.
+
+## Results-analysis
 
 
-## results-analysis
+## Timing

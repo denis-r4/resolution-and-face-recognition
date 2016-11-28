@@ -14,7 +14,7 @@ Face recognition systems got widespread in problems of a processing and analysis
 
 At the moment, there are many solutions of face recognition systems, that have accuracy close to 99% according to [LFW-behcnmark](http://vis-www.cs.umass.edu/lfw/results.html)
 
-However, detection systems based on a CNN imposes various restrictions on an input data. One of them - spatial resolution of an input image (as a rule, the height, and width of an image) must be equal to the size of a network input. In practice, there are often cases when the target object in a frame has a smaller size than the size of the entrance window of the network, which may a negatively affects the quality of facial recognition.
+However, detection systems based on a CNN imposes various restrictions on an input data. One of them - spatial resolution of an input image (as a rule, the height, and width of an image) must be equal to the size of a network input. In practice, there are often cases when the target object in a frame has a smaller size than the size of the entrance window of the network, which may a negatively affects the quality of facial recognition, more than that, frequently, undersized or/and blurred face images just skipped.
 
 <br/>
 <p align="center">
@@ -64,6 +64,9 @@ As a model for face recognition, I chose the one based on VGG16, which has an in
 
 
 ## face-recognition-model
+For choosing face-recognition model I looked up a few free pre-trained models and stopped at the [Caffe model zoo](https://github.com/BVLC/caffe/wiki/Model-Zoo#vgg-face-cnn-descriptor) - [VGG16 for face recognition](http://www.robots.ox.ac.uk/~vgg/software/vgg_face/). I prefer Theano, so, I repacked "caffemodel" to "pickle" format.
+Then, I used fc7 layer instead of fc8 for getting vector representation of an input.
+
 
 ## tests
 

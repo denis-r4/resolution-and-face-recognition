@@ -2,15 +2,15 @@
 
 ## Index
 
-* [Hypothesis](#Hypothesis)
-* [Hypothesis-testing-plan](#Hypothesis-testing-plan)
-* [Data-acquisition-and-preparation](#Data-acquisition-and-preparation)
-* [Face-recognition-model](#Face-recognition-model)
-* [Test](#Tests)
-* [Results-analysis](#Results-analysis)
-* [Timing](#Timing)
+* [hypothesis](#hypothesis)
+* [hypothesis-testing-plan](#hypothesis-testing-plan)
+* [data-acquisition-and-preparation](#data-acquisition-and-preparation)
+* [face-recognition-model](#face-recognition-model)
+* [test](#tests)
+* [results-analysis](#results-analysis)
+* [timing](#timing)
 
-## Hypothesis
+## hypothesis
 Face recognition systems got widespread in problems of a processing and analysis of a video data. One of them is the problem of home security and an example of product based on a home security is ["Ring.com"](https://ring.com) company.
 
 At the moment, there are many solutions of face recognition systems, that have accuracy close to 99% according to [LFW-behcnmark](http://vis-www.cs.umass.edu/lfw/results.html)
@@ -33,7 +33,7 @@ One way to achieve a small growth of a recognition quality under the conditions 
 
 
 
-## Hypothesis-testing-plan
+## hypothesis-testing-plan
 To test the hypothesis, I will need an in-the-wild faces data, a model for face recognition, image resolution enhancement methods, and python.
 In order to understand how different methods of image resolution enhancement affect the quality of face recognition, I will exploit the next pipeline:
 
@@ -44,7 +44,7 @@ In order to understand how different methods of image resolution enhancement aff
 * Analysing the recognition error from method to method.
 
 
-## Data-acquisition-and-preparation
+## data-acquisition-and-preparation
 
 As a test case, I decided to choose the video as close to reality - taken directly from the [Ring.com device](https://ring.com/videodoorbells). After watching about [30 videos](https://www.youtube.com/channel/UCSDG3M0e2mGX9_qtHEtzj2Q/videos), I decided to choose the [one](https://www.youtube.com/watch?v=zwUeS_sXJcY) with the appearance and disappearance of several different people on the scene and long enough for generating data set. (I choose only one due low hardware resource and limited time conditions)
 
@@ -64,12 +64,12 @@ As a model for face recognition, I chose the one based on VGG16, which has an in
 |   <p align="center"> <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/resize_examples/80.png"> </p>   |   <p align="center"> <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/resize_examples/50.png"> </p>   |   <p align="center"> <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/resize_examples/30.png"> </p>   |   <p align="center"> <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/resize_examples/20.png"> </p>   |   <p align="center"> <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/resize_examples/15.png"> </p>   |   <p align="center"> <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/resize_examples/10.png"> </p>   |   <p align="center"> <img src="https://github.com/denis-r4/resolution-and-face-recognition/blob/master/media/resize_examples/5.png"> </p>   |
 
 
-## Face-recognition-model
+## face-recognition-model
 For choosing face-recognition model I looked up a few free pre-trained models and stopped at the [Caffe model zoo](https://github.com/BVLC/caffe/wiki/Model-Zoo#vgg-face-cnn-descriptor) - [VGG16 for face recognition](http://www.robots.ox.ac.uk/~vgg/software/vgg_face/). I prefer Theano, so, I repacked "caffemodel" to "pickle" format.
 Then, I used fc7 layer instead of fc8 for getting vector representation of an input.
 
 
-## Tests
+## tests
 ### Algorithms
 For testing, I choose three most spread algorithms - [bilinear interpolation](https://en.wikipedia.org/wiki/Bilinear_interpolation), [nearest neighbor](https://en.wikipedia.org/wiki/Nearest-neighbor_interpolation), and [bicubic interpolation](https://en.wikipedia.org/wiki/Bicubic_interpolation). Also after some searching of recent implementation of super-resolution (SR) algorithms based on neural networks, I found the good one - [neural-enhance](https://github.com/alexjc/neural-enhance)  
 Also, there is a good SR benchmark that I found later - [sr-bechmark](https://github.com/huangzehao/Super-Resolution.Benckmark), but I didn't have a possibility to test more than one SR solution, so, I choose the first one.   
@@ -87,10 +87,10 @@ Resulting plot looks like this:
 The bottom axis represents a different scale of source images.
 The left axis represents a received accuracy of face-recognition for particular scale.
 
-## Results-analysis
+## results-analysis
 Considering the received results, it can be concluded that in the case of using particular [super-resolution model](https://github.com/alexjc/neural-enhance) and [face-recognition system](http://www.robots.ox.ac.uk/~vgg/software/vgg_face/), it didn't give an accuracy benefit as compared with the interpolation methods, that have close to each other by accuracy and significantly higher than tested SR-method. However, the applying of artificial image resolution methods can increase the face-recognition accuracy, and let to skip less frames on a data-cleaning stage. 
 
 Also, I want to point that given result has to be considered only for described above models. And doesn't have to block the interest to possibilities and accuracy benifits, which might bring the super-resolution technologies and related.  Another one thing, that I want to point is that SR-methods already successfully have been applied for detection and recognition accuracy growth in my past experience. Those SR methods have been based on the work - [Super-resolution from a Single Image]( http://www.wisdom.weizmann.ac.il/~vision/single_image_SR/files/single_image_SR.pdf)
 
-## Timing
+## timing
 In total, I spent on this research around 11 hours and up to 16 hours for computing hashes, rendering SR up-scaled frames on my laptop CPU. 

@@ -38,7 +38,7 @@ In order to understand how different methods of image resolution enhancement aff
 
 * Detect [faces-ROI](https://github.com/denis-r4/resolution-and-face-recognition/blob/master/notebooks/face_detector.ipynb) on real data, as well as artificially noise them, reduce the size of ROI faces, simulating different variants of object distance from the camera;
 * Compute vector representation of faces for the database and for all generated on the stage one samples using [pre-trained](http://www.robots.ox.ac.uk/~vgg/software/vgg_face) face recognition model [VGG16](https://github.com/denis-r4/resolution-and-face-recognition/blob/master/notebooks/vgg.py) using last before output FC layer of the network;
-* Compute [cosine distance](https://github.com/denis-r4/resolution-and-face-recognition/blob/master/notebooks/compute_cos_distance.ipynb) from each input sample (from the stage two)  to each hash in the face database;
+* [Compute](https://github.com/denis-r4/resolution-and-face-recognition/blob/master/notebooks/compute_cos_distance.ipynb) [cosine distance](https://en.wikipedia.org/wiki/Cosine_similarity) from each input sample (from the stage two)  to each hash in the face database;
 * Compute a network error for various boundary condition of faces and different methods of a resolution enhancement;
 * Analysing the recognition error from method to method.
 

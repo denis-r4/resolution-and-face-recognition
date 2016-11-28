@@ -88,6 +88,8 @@ The bottom axis represents a different scale of source images.
 The left axis represents a received accuracy of face-recognition for particular scale.
 
 ## Results-analysis
+Considering the received results, it can be concluded that in the case of using particular super-resolution model and face-recognition system, it didn't give an accuracy benefit as compared with the interpolation methods, that have close to each other by accuracy and significantly higher than tested SR-method. However, the applying of artificial image resolution methods can increase the face-recognition accuracy, and let to skip less frames on a data-cleaning stage. 
 
+Also, I want to point that given result has to be considered only for described above models. And doesn't have to block the interest to possibilities and accuracy benifits, which might bring the super-resolution technologies and related.  Another one thing, that I want to point is that SR-methods already successfully have been applied for detection and recognition accuracy growth in my past experience. Those SR method has been based on the work - [Super-resolution from a Single Image]( http://www.wisdom.weizmann.ac.il/~vision/single_image_SR/files/single_image_SR.pdf)
 
 ## Timing
